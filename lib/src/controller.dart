@@ -57,7 +57,7 @@ class VideoEditorController extends ChangeNotifier {
           Platform.isIOS ? Uri.encodeFull(file.path) : file.path,
         )),
         trimStyle = trimStyle ?? TrimSliderStyle(),
-        assert(maxDuration == Duration.zero && minDuration == Duration.zero || maxDuration > minDuration,
+        assert(maxDuration == Duration.zero || maxDuration > minDuration,
             'The maximum duration must be bigger than the minimum duration');
 
   int _rotation = 0;
