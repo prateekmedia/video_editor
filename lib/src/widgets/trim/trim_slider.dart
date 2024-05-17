@@ -399,6 +399,7 @@ class _TrimSliderState extends State<TrimSlider>
   void _changeTrimRect({double? left, double? width, bool updateTrim = true}) {
     left = left ?? _rect.left;
     width = max(0, width ?? _rect.width);
+    if (!left!.isFinite || !width!.isFinite) return;
 
     // if [left] and [width] params does not respect the min and max duration set in the controller
     // reduce the trimmed area to respect it
